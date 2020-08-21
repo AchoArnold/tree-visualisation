@@ -18,6 +18,12 @@ export class ItemsMigrator implements Migrator {
             } as Item
         })
 
-        
+        // CREATE (john:Person {name: 'John'})
+        // CREATE (joe:Person {name: 'Joe'})
+        // CREATE (steve:Person {name: 'Steve'})
+        // CREATE (sara:Person {name: 'Sara'})
+        // CREATE (maria:Person {name: 'Maria'})
+        // CREATE (john)-[:FRIEND]->(joe)-[:FRIEND]->(steve)
+        // CREATE (john)-[:FRIEND]->(sara)-[:FRIEND]->(maria)
     };
 }
