@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { AppContainer } from './Container/AppContainer';
 import envKeys from './keys';
 import responseTime from 'response-time';
+import cors from 'cors';
 
 const app = express();
 const port = envKeys.APP_PORT;
@@ -20,6 +21,8 @@ app.use(
         });
     })
 );
+
+app.use(cors())
 
 /**
  * Routes Definitions
