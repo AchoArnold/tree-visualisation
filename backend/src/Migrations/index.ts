@@ -1,15 +1,25 @@
-import {MigrationsContainer} from './MigrationsContainer';
+import { MigrationsContainer } from '../Container/MigrationsContainer';
+import keys from '../keys';
+import { Migrator } from './Migrator';
 
-const container = new MigrationsContainer();
+const container = new MigrationsContainer(keys);
+const logger = container.Logger();
 
 const itemsToMigrate: Migrator[] = [
+    container.TruncateMigrator(),
     container.ItemsMigrator()
-]
+];
 
 async function runMigrations() {
     for (const migrator of itemsToMigrate) {
+        logger.info('Migrating:', migrator.constructor.name);
         await migrator.migrate();
     }
 }
 
-runMigrations();
+logger.info('Running migration');
+runMigrations().then(async () => {
+    logger.info('Migration finished');
+    await container.databaseConnection().neo4j().close();
+    process.exit(0);
+});

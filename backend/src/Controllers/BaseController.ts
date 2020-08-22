@@ -1,3 +1,3 @@
-import {Request, Response} from "express";
+import { Request, Response } from 'express';
 
-export type ControllerResponse = (request:Request, response: Response) => void
+export type ControllerResponse = (request: Request, response: Response) => void;

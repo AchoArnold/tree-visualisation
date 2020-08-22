@@ -1,3 +1,3 @@
-interface Migrator {
-    migrate(): Promise<void>
+export interface Migrator {
+    migrate(): Promise<void>;
 }
