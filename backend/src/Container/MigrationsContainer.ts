@@ -4,21 +4,21 @@ import Logger from 'bunyan';
 import { TruncateMigrator } from '../Migrations/TruncateMigrator';
 
 export class MigrationsContainer extends BaseContainer {
-    ItemsMigrator(): ItemsMigrator {
+    itemsMigrator(): ItemsMigrator {
         return new ItemsMigrator(
             this.databaseConnection().neo4j(),
-            this.Logger()
+            this.logger()
         );
     }
 
-    TruncateMigrator(): TruncateMigrator {
+    truncateMigrator(): TruncateMigrator {
         return new TruncateMigrator(
             this.databaseConnection().neo4j(),
-            this.Logger()
+            this.logger()
         );
     }
 
-    Logger(): Logger {
+    logger(): Logger {
         return Logger.createLogger({
             name: 'migrations'
         });

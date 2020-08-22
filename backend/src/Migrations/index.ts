@@ -3,11 +3,11 @@ import keys from '../keys';
 import { Migrator } from './Migrator';
 
 const container = new MigrationsContainer(keys);
-const logger = container.Logger();
+const logger = container.logger();
 
 const itemsToMigrate: Migrator[] = [
-    container.TruncateMigrator(),
-    container.ItemsMigrator()
+    container.truncateMigrator(),
+    container.itemsMigrator()
 ];
 
 async function runMigrations() {

@@ -1,13 +1,13 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { AppContainer } from './Container/AppContainer';
-import envKeys from './keys';
+import keys from './keys';
 import responseTime from 'response-time';
 import cors from 'cors';
 
 const app = express();
-const port = envKeys.APP_PORT;
-const container = new AppContainer(envKeys);
-const logger = container.Logger();
+const port = keys.APP_PORT;
+const container = new AppContainer(keys);
+const logger = container.logger();
 
 /**
  * Middlewares
@@ -22,12 +22,12 @@ app.use(
     })
 );
 
-app.use(cors())
+app.use(cors());
 
 /**
  * Routes Definitions
  */
-app.get('/', container.ItemsController().index());
+app.get('/', container.itemsController().index());
 
 /**
  * Server Activation

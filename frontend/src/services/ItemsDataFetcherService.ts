@@ -1,18 +1,21 @@
 import axios from 'axios';
 
 export interface ItemData {
-  name: string,
-  description: string,
-  parent: string
+    name: string;
+    description: string;
+    parent: string;
 }
 
 export default class ItemsDataFetcherService {
-  itemsDataEndpoint: string
-  constructor(itemsDatEndpoint: string) {
-    this.itemsDataEndpoint = itemsDatEndpoint
-  }
+    itemsDataEndpoint: string;
 
-  fetch(): Promise<ItemData[]> {
-    return axios.get(this.itemsDataEndpoint);
-  }
+    constructor(itemsDatEndpoint: string) {
+      this.itemsDataEndpoint = itemsDatEndpoint;
+    }
+
+    fetch(): Promise<ItemData[]> {
+      return axios
+        .get(this.itemsDataEndpoint)
+        .then((response) => response.data);
+    }
 }

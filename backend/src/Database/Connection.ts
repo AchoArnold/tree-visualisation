@@ -1,4 +1,4 @@
-import neo4j, { driver, Driver } from 'neo4j-driver';
+import neo4jDriver, { driver, Driver } from 'neo4j-driver';
 
 export class Connection {
     neo4jConfig: Neo4JConfig;
@@ -10,9 +10,9 @@ export class Connection {
     neo4j(): Driver {
         // Create a driver instance, for the user `neo4j` with password `password`.
         // It should be enough to have a single driver per database per application.
-        return neo4j.driver(
+        return neo4jDriver.driver(
             this.neo4jConfig.protocol + '://' + this.neo4jConfig.host,
-            neo4j.auth.basic(
+            neo4jDriver.auth.basic(
                 this.neo4jConfig.username,
                 this.neo4jConfig.password
             )

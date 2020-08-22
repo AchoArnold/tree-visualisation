@@ -1,19 +1,19 @@
 import { ItemsController } from '../Controllers/ItemsController';
 import { ItemsRepository } from '../Repositories/ItemsRepository';
 import { BaseContainer } from './BaseContainer';
-import Logger from 'bunyan';
+import bunyan from 'bunyan';
 
 export class AppContainer extends BaseContainer {
-    ItemsRepository(): ItemsRepository {
+    itemsRepository(): ItemsRepository {
         return new ItemsRepository(this.databaseConnection().neo4j());
     }
 
-    ItemsController(): ItemsController {
-        return new ItemsController(this.ItemsRepository());
+    itemsController(): ItemsController {
+        return new ItemsController(this.itemsRepository());
     }
 
-    Logger(): Logger {
-        return Logger.createLogger({
+    logger(): bunyan {
+        return bunyan.createLogger({
             name: 'application'
         });
     }

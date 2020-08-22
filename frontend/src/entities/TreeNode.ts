@@ -1,34 +1,40 @@
 export default class TreeNode<Properties> {
-  children: Set<TreeNode<Properties>>
-  parent ?: TreeNode<Properties>
-  properties: Properties
+    children: Set<TreeNode<Properties>>;
 
-  constructor(properties: Properties) {
-    this.children = new Set<TreeNode<Properties>>();
-    this.properties = properties
-  }
+    parent?: TreeNode<Properties>;
 
-  isRoot(): boolean {
-    return this.parent === undefined
-  }
+    properties: Properties;
 
-  addChild(node: TreeNode<Properties>) {
-    this.children.add(node)
-  }
+    constructor(properties: Properties) {
+      this.children = new Set<TreeNode<Properties>>();
+      this.properties = properties;
+    }
 
-  setParent(node: TreeNode<Properties>) {
-    this.parent = node
-  }
+    isRoot(): boolean {
+      return this.parent === undefined;
+    }
 
-  setProperties(properties: Properties) {
-    this.properties = properties
-  }
+    addChild(node: TreeNode<Properties>) {
+      this.children.add(node);
+    }
 
-  getChildren(): TreeNode<Properties>[] {
-    return Array.from(this.children)
-  }
+    setParent(node: TreeNode<Properties>) {
+      this.parent = node;
+    }
 
-  getProperties(): Properties {
-    return this.properties;
-  }
+    setProperties(properties: Properties) {
+      this.properties = properties;
+    }
+
+    getChildren(): TreeNode<Properties>[] {
+      return Array.from(this.children);
+    }
+
+    getParent(): TreeNode<Properties> | undefined {
+      return this.parent;
+    }
+
+    getProperties(): Properties {
+      return this.properties;
+    }
 }

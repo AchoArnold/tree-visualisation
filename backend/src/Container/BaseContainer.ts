@@ -1,6 +1,6 @@
 import { Connection } from '../Database/Connection';
 import keys from '../keys';
-import Logger from 'bunyan';
+import bunyan from 'bunyan';
 
 export abstract class BaseContainer {
     dbConnection: Connection;
@@ -10,7 +10,7 @@ export abstract class BaseContainer {
         this.env = env;
     }
 
-    abstract Logger(): Logger;
+    abstract logger(): bunyan;
 
     /**
      * Database connection singleton

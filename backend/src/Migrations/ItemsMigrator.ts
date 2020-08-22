@@ -1,25 +1,26 @@
-import itemsData from './items.json';
+import itemsJson from './items.json';
 import { Item } from '../Entities/Item';
 import { Driver } from 'neo4j-driver';
 import { Migrator } from './Migrator';
-import Logger from 'bunyan';
+import bunyan from 'bunyan';
 
 export class ItemsMigrator implements Migrator {
     dbConnection: Driver;
-    logger: Logger;
+    logger: bunyan;
 
-    constructor(dbConnection: Driver, logger: Logger) {
+    constructor(dbConnection: Driver, logger: bunyan) {
         this.dbConnection = dbConnection;
         this.logger = logger;
     }
 
     async migrate(): Promise<void> {
-        const items = itemsData.data.map((item) => {
-            return {
+        const items = itemsJson.data.map((item) => {
+            const parsedItem: Item = {
                 name: item.name,
                 description: item.description,
                 parent: item.parentId ?? item.parent
-            } as Item;
+            };
+            return parsedItem
         });
 
         const session = this.dbConnection.session();

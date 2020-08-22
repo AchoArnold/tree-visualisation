@@ -1,12 +1,12 @@
 import { Migrator } from './Migrator';
 import { Driver } from 'neo4j-driver';
-import Logger from 'bunyan';
+import bunyan from 'bunyan';
 
 export class TruncateMigrator implements Migrator {
     dbConnection: Driver;
-    logger: Logger;
+    logger: bunyan;
 
-    constructor(dbConnection: Driver, logger: Logger) {
+    constructor(dbConnection: Driver, logger: bunyan) {
         this.dbConnection = dbConnection;
         this.logger = logger;
     }
