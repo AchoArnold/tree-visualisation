@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   neo4j:
     image: neo4j:latest
@@ -13,6 +13,8 @@ services:
       - NEO4J_dbms_memory_heap_max__size=1G
       # Disable authentication
       - NEO4J_AUTH=none
+    networks:
+      - app
 
   backend:
     build:
@@ -32,7 +34,7 @@ services:
     depends_on:
       - backend
     ports:
-      - 80:8080
+      - 8080:80
     networks:
       - app
 
