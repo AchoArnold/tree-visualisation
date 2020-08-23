@@ -16,9 +16,6 @@ export default class ItemsTreeBuilder {
                 (nodes.get(itemData.parent) as ItemsTreeNode).addChild(
                     nodes.get(itemData.name) as ItemsTreeNode
                 );
-                (nodes.get(itemData.name) as ItemsTreeNode).setParent(
-                    nodes.get(itemData.parent) as ItemsTreeNode
-                );
             } else {
                 root = nodes.get(itemData.name) as ItemsTreeNode;
             }

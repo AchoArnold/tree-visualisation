@@ -16,10 +16,7 @@ export default class TreeNode<Properties> {
 
     addChild(node: TreeNode<Properties>) {
         this.children.add(node);
-    }
-
-    setParent(node: TreeNode<Properties>) {
-        this.parent = node;
+        node.setParent(this);
     }
 
     setProperties(properties: Properties) {
@@ -36,5 +33,9 @@ export default class TreeNode<Properties> {
 
     getProperties(): Properties {
         return this.properties;
+    }
+
+    private setParent(node: TreeNode<Properties>) {
+        this.parent = node;
     }
 }

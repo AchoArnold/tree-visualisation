@@ -35,12 +35,20 @@ export default class App extends Vue {
             keys.GET_ITEMS_ENDPOINT
         );
 
-        itemsDataFetcher.fetch().then((items: ItemData[]) => {
-            this.itemsTreeRoot = ItemsTreeBuilder.build(items);
-            this.dataIsLoaded = true;
-        }).catch(() => {
-          alert('Error fetching the tree items from the API')
-        })
+        itemsDataFetcher
+            .fetch()
+            .then((items: ItemData[]) => {
+                this.itemsTreeRoot = ItemsTreeBuilder.build(items);
+                this.dataIsLoaded = true;
+            })
+            .catch(() => {
+                /* eslint-disable */
+                /**
+                 * ON production this should be handled gracefully
+                 */
+                alert('Error fetching the tree items from the API');
+                /* eslint-enable */
+            });
     }
 }
 </script>

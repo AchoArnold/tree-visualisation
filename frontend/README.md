@@ -1,6 +1,6 @@
 # Frontend
 
-The frontend is done with Tyepscript and Vue.js. It uses the default vue.js setup with typescript so  didn't do any configuration on it.
+The frontend is done with Tyepscript and Vue.js. It uses the default vue.js setup with typescript so didn't do any configuration on it.
 
 ## Code Walkthrough
 
@@ -40,7 +40,7 @@ npm run serve
 
 ### Testing
 
-You can run unit tests using the command below. I used `jest` for unit tests. 
+You can run unit tests using the command below. I used `jest` for unit tests.
 
 ```bash
 npm run test:unit
