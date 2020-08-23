@@ -16,7 +16,7 @@ mv .env.example .env
 
 The dependencies can be installed using the command below
 
-```
+```bash
 npm install
 ```
 
@@ -26,7 +26,7 @@ The migration command below imports the items from `https://gist.github.com/hurk
 
 **NOTE:** The migration command clears the entire database before inserting the new items into the database.
 
-```
+```bash
 npm run migrate
 ```
 
@@ -34,7 +34,7 @@ npm run migrate
 
 **NOTE:** Make sure you run the migration and you have configured your .env variable correctly before starting the application. The command below starts the application and exposes it on the `APP_PORT` variable in the `.env` file. The default URL is [http://localhost:8000](http://localhost:8000) so make sure the port `8000` is free.
 
-```
+```bash
 npm run start
 ```
 
@@ -42,30 +42,16 @@ npm run start
 
 There's only one e2e test which tests that the api responds with the correct set of items.
 
-**NOTE:** Before running the test, make sure the migration has already been done because e2e test actually calls the API and it will fail if it's not properly setup.
+**NOTE:** Before running the test, make sure the migration has already been done because e2e test actually calls the API and it will fail if the migration hasn't been done. So ideally run `npm run migrate` before running the test.
 
-```
+```bash
 npm run test
 ```
 
 ### Lints and fixes files
 
-```
+I used ts-lint for linting, You can run the linter using the command below
+
+```bash
 npm run lint
 ```
-
-### Run your end-to-end tests
-
-```
-npm run test:e2e
-```
-
-### Run your unit tests
-
-```
-npm run test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
