@@ -10,12 +10,12 @@ export default class ItemsDataFetcherService {
     itemsDataEndpoint: string;
 
     constructor(itemsDatEndpoint: string) {
-        this.itemsDataEndpoint = itemsDatEndpoint;
+      this.itemsDataEndpoint = itemsDatEndpoint;
     }
 
     fetch(): Promise<ItemData[]> {
-        return axios
-            .get(this.itemsDataEndpoint)
-            .then((response) => response.data);
+      return axios
+        .get(this.itemsDataEndpoint)
+        .then((response) => response.data);
     }
 }
