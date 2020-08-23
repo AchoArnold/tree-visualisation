@@ -1,6 +1,10 @@
-name: Test
+name: Frontend
 
 on: [push]
+
+defaults:
+  run:
+    working-directory: ./frontend
 
 jobs:
   test:
@@ -15,7 +19,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd ./frontend
       - run: npm install
       - run: npm run lint
       - run: npm test:unit

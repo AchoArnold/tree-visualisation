@@ -1,6 +1,10 @@
-name: Test
+name: Backend
 
 on: [push]
+
+defaults:
+  run:
+    working-directory: ./backend
 
 jobs:
   test:
