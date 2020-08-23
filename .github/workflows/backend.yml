@@ -13,6 +13,16 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+    services:
+      neo4j:
+        image: neo4j:latest
+        env:
+          NEO4J_AUTH: none
+        options: >-
+          --health-cmd curl -i http://127.0.0.1:7474 2>&1 | grep -c -e '200 OK'
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
