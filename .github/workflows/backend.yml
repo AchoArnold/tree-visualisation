@@ -30,7 +30,7 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: mv .env.example .env
-      - run: sleep 15 && npm run migrate
+      - run: npm run migrate
       - run: npm run test
         env:
           CI: true
