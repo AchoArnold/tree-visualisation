@@ -21,6 +21,11 @@ jobs:
           - 7687:7687
         env:
           NEO4J_AUTH: none
+        options: >-
+          --health-cmd sleep 15
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}

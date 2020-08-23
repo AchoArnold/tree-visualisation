@@ -31,3 +31,7 @@ See [backend/README.md](./backend/README.md)
 #### Frontend
 
 see [frontend/README.md](./frontend/README.md)
+
+#### CI/CD
+
+I setup a gitlab action to run the tests for both the frontend and backend on push. See [Actions](./actions)
