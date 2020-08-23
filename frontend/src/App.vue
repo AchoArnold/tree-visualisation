@@ -38,7 +38,9 @@ export default class App extends Vue {
         itemsDataFetcher.fetch().then((items: ItemData[]) => {
             this.itemsTreeRoot = ItemsTreeBuilder.build(items);
             this.dataIsLoaded = true;
-        });
+        }).catch(() => {
+          alert('Error fetching the tree items from the API')
+        })
     }
 }
 </script>

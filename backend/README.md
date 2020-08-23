@@ -2,6 +2,20 @@
 
 The backend is done completely in Typescript, and I run it using [ts-node](https://github.com/TypeStrong/ts-node) so I don't compile the typescript to javascript before running it with node.js. Since the DB uses neo4j, I setup the DB using a docker container. It can be done by using a free [neo4j sandbox instance](https://sandbox.neo4j.com/). The `.env` variables will need to be configured properly.
 
+## Code Walkthrough
+
+The code is found in the `./src` directory. I created  basic container found in `./src/Containers` for both the application and the migration since they run differently.
+
+I called the nodes in the graph `Item` since I couldn't find a better name.
+
+The app has one controller and when a user visits `/` they get routed the `index` controller which returns `all`  the items in the database.
+
+
+For the migration. Each migration file extends the `Migrator` class and the `src/Migration/index.ts` file runs the migration. The list of migrations to run is stored in the `itemsToMigrate` array. And the migration just loops through all the migrators in this array calling the `migrate()` method in each migrator.
+
+**NOTE** I clear the database before running each migration. This is just a hack for ease. To setup the application in production, There should be an extra DB table which tracks the migrations that have already been run such that when you start the application, It runs only migrations that have not yet been run.
+
+
 ## Setup
 
 ### Environment variables
