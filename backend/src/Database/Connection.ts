@@ -11,7 +11,11 @@ export class Connection {
         // Create a driver instance, for the user `neo4j` with password `password`.
         // It should be enough to have a single driver per database per application.
         return neo4jDriver.driver(
-            this.neo4jConfig.protocol + '://' + this.neo4jConfig.host,
+            this.neo4jConfig.protocol +
+                '://' +
+                this.neo4jConfig.host +
+                ':' +
+                this.neo4jConfig.port,
             neo4jDriver.auth.basic(
                 this.neo4jConfig.username,
                 this.neo4jConfig.password
@@ -25,4 +29,5 @@ interface Neo4JConfig {
     host: string;
     username: string;
     password: string;
+    port: string;
 }

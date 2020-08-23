@@ -3,6 +3,7 @@ import { AppContainer } from './Container/AppContainer';
 import keys from './keys';
 import responseTime from 'response-time';
 import cors from 'cors';
+import exp from 'constants';
 
 const app = express();
 const port = keys.APP_PORT;
@@ -62,3 +63,5 @@ const shutDown = () => {
  */
 process.on('SIGTERM', shutDown);
 process.on('SIGINT', shutDown);
+
+export default server;

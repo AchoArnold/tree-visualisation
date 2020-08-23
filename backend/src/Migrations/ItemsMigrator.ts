@@ -20,7 +20,7 @@ export class ItemsMigrator implements Migrator {
                 description: item.description,
                 parent: item.parentId ?? item.parent
             };
-            return parsedItem
+            return parsedItem;
         });
 
         const session = this.dbConnection.session();

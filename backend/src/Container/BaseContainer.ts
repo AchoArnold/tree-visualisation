@@ -24,7 +24,8 @@ export abstract class BaseContainer {
             protocol: this.env.NEO4J_PROTOCOL,
             host: this.env.NEO4J_HOST,
             username: this.env.NEO4J_USERNAME,
-            password: this.env.NEO4J_PASSWORD
+            password: this.env.NEO4J_PASSWORD,
+            port: this.env.NEO4J_PORT
         });
 
         return this.dbConnection;

@@ -1,14 +1,16 @@
 ## Intro
 
-I separated the code for the frontend and the backend but you can run everything using the magic of docker.
+I separated the code for the frontend and the backend but you can run everything using the magic of docker as show below.
+
+This is implemented using the single page application architecture, The frontend is done with Vue.js. The backend is done using express.js and It uses neo4j for the database.
 
 ### Links
 
-Frontend: http://localhost:8080
+Frontend: [http://localhost:8080](http://localhost:8080)
 
-Backend: http://localhost:8000
+Backend: [http://localhost:8000](http://localhost:8000)
 
-Neo4j: http://localhost:7474/browser/
+Neo4j: [http://localhost:7474/browser/](http://localhost:7474/browser/)
 
 ## Setup
 
@@ -22,22 +24,10 @@ docker-compose up --build
 
 This will build both the frontend and the backend and you'll be able to test the application using the links in the section above.
 
-
-### Without Docker
-
 #### Backend
 
-##### Running The Migration
-
-##### Building
-
-##### Testing
-
+See [backend/README.md](./backend/README.md)
 
 #### Frontend
 
-##### Running The Migration
-
-##### Building
-
-##### Testing
+see [frontend/README.md](./frontend/README.md)

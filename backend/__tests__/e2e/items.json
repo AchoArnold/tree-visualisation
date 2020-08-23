@@ -1,0 +1,37 @@
+[
+    {
+        "name": "A",
+        "parent": "",
+        "description": "This is a description of A"
+    },
+    {
+        "name": "B",
+        "parent": "A",
+        "description": "This is a description of B"
+    },
+    {
+        "name": "C",
+        "parent": "A",
+        "description": "This is a description of C"
+    },
+    {
+        "name": "D",
+        "parent": "A",
+        "description": "This is a description of D"
+    },
+    {
+        "name": "B-1",
+        "parent": "B",
+        "description": "This is a description of B-1"
+    },
+    {
+        "name": "B-2",
+        "parent": "B",
+        "description": "This is a description of B-2"
+    },
+    {
+        "name": "B-3",
+        "parent": "B",
+        "description": "This is a description of B-3"
+    }
+]
