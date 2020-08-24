@@ -24,11 +24,11 @@ docker-compose up --build
 
 This will build both the frontend and the backend and you'll be able to test the application using the links in the section above.
 
-#### Backend
+#### Backend [![Actions Status](https://github.com/AchoArnold/tree-visualisation/workflows/Backend/badge.svg)](https://github.com/AchoArnold/tree-visualisation/actions)
 
 See [backend/README.md](./backend/README.md)
 
-#### Frontend
+#### Frontend [![Actions Status](https://github.com/AchoArnold/tree-visualisation/workflows/Frontend/badge.svg)](https://github.com/AchoArnold/tree-visualisation/actions)
 
 see [frontend/README.md](./frontend/README.md)
 
