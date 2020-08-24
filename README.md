@@ -26,11 +26,11 @@ This will build both the frontend and the backend and you'll be able to test the
 
 #### Backend [![Actions Status](https://github.com/AchoArnold/tree-visualisation/workflows/Backend/badge.svg)](https://github.com/AchoArnold/tree-visualisation/actions?query=workflow%3ABackend)
 
-See [backend/README.md](./backend/README.md)
+See [backend/README.md](./backend)
 
 #### Frontend [![Actions Status](https://github.com/AchoArnold/tree-visualisation/workflows/Frontend/badge.svg)](https://github.com/AchoArnold/tree-visualisation/actions?query=workflow%3AFrontend)
 
-see [frontend/README.md](./frontend/README.md)
+see [frontend/README.md](./frontend)
 
 #### CI/CD
 
