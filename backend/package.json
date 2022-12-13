@@ -35,7 +35,7 @@
         "bunyan": "^1.8.14",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "neo4j-driver": "^4.1.1",
         "response-time": "^2.3.2",
         "supertest": "^4.0.2"
